@@ -1,7 +1,6 @@
 #!/bin/bash
 
-DEBUG=true
-
+# shellcheck disable=SC2154
 flavour=${args[flavour]}
 saveTo=${args[--path]}
 installer=NULL
