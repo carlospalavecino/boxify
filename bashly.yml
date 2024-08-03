@@ -4,31 +4,29 @@ version: 0.0.0
 # environment_variables:
 #   - name: api_key
 #     help: Set your API key
-# commands:
-#   - name: download
-# alias: d
-# help: Download a file
-
-# args:
-#   - name: source
-#     required: true
-#     help: URL to download from
-#   - name: target
-#     help: "Target filename (default: same as source)"
-
-# flags:
-#   - long: --force
-#     short: -f
-#     help: Overwrite existing files
-
-# examples:
-#   - cli download example.com
-#   - cli download example.com ./output -f
-
-# environment_variables:
-#   - name: default_target_location
-#     help: Set the default location to download to
-
+commands:
+  - name: download
+    help: Download an iso image or MacOS Installer
+    commands:
+      - name: macos
+        help: Download a MacOS Installer
+        args:
+          - name: flavour
+            required: false
+            help: Flavour of MacOS to download
+        examples:
+          - boxify download macos Sonoma
+          - boxify download macos Ventura
+          - boxify download macos Monterey
+          - boxify download macos BigSur
+          - boxify download macos Catalina
+          - boxify download macos Mojave
+          - boxify download macos HighSierra
+          - boxify download macos Sierra
+          - boxify download macos ElCapitan
+          - boxify download macos Yosemite
+          - boxify download macos MountainLion
+          - boxify download macos Lion
 # - name: upload
 #   alias: u
 #   help: Upload a file
