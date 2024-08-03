@@ -8,5 +8,4 @@ error() {
 
 log() {
   echo "$(green_bold ✔️) $1"
-  exit 1
 }

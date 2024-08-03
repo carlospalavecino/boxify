@@ -27,21 +27,31 @@ commands:
           - boxify download macos Yosemite
           - boxify download macos MountainLion
           - boxify download macos Lion
-# - name: upload
-#   alias: u
-#   help: Upload a file
-# args:
-#   - name: source
-#     required: true
-#     help: File to upload
-
-# flags:
-#   - long: --user
-#     short: -u
-#     arg: user
-#     help: Username to use for logging in
-#     required: true
-#   - long: --password
-#     short: -p
-#     arg: password
-#     help: Password to use for logging in
+  - name: create
+    help: Create and iso image from a mac installer
+    commands:
+      - name: iso
+        help: Create and iso image from a mac installer
+        args:
+          - name: flavour
+            required: true
+            help: flavour of MacOS to use as source (It must be fully downloaded)
+        flags:
+          - long: --path
+            short: -p
+            arg: path
+            default: "$HOME/Desktop"
+            help: save the iso image to this path
+        examples:
+          - boxify create iso Sonoma  -p ~/Desktop
+          - boxify create iso Ventura -p ~/Desktop
+          - boxify create iso Monterey  -p ~/Desktop
+          - boxify create iso BigSur  -p ~/Desktop
+          - boxify create iso Catalina  -p ~/Desktop
+          - boxify create iso Mojave  -p ~/Desktop
+          - boxify create iso HighSierra  -p ~/Desktop
+          - boxify create iso Sierra  -p ~/Desktop
+          - boxify create iso ElCapitan -p ~/Desktop
+          - boxify create iso Yosemite  -p ~/Desktop
+          - boxify create iso MountainLion  -p ~/Desktop
+          - boxify create iso Lion  -p ~/Desktop
