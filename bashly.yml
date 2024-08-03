@@ -1,0 +1,57 @@
+name: boxify
+help: A simple cli application, made to simplify the creation of vagrant boxes.
+version: 0.0.0
+# environment_variables:
+#   - name: api_key
+#     help: Set your API key
+commands:
+  - name: download
+    help: Download an iso image or MacOS Installer
+    commands:
+      - name: macos
+        help: Download a MacOS Installer
+        args:
+          - name: flavour
+            required: false
+            help: Flavour of MacOS to download
+        examples:
+          - boxify download macos Sonoma
+          - boxify download macos Ventura
+          - boxify download macos Monterey
+          - boxify download macos BigSur
+          - boxify download macos Catalina
+          - boxify download macos Mojave
+          - boxify download macos HighSierra
+          - boxify download macos Sierra
+          - boxify download macos ElCapitan
+          - boxify download macos Yosemite
+          - boxify download macos MountainLion
+          - boxify download macos Lion
+  - name: create
+    help: Create and iso image from a mac installer
+    commands:
+      - name: iso
+        help: Create and iso image from a mac installer
+        args:
+          - name: flavour
+            required: true
+            help: flavour of MacOS to use as source (It must be fully downloaded)
+        flags:
+          - long: --path
+            short: -p
+            arg: path
+            default: "$HOME/Desktop"
+            help: save the iso image to this path
+        examples:
+          - boxify create iso Sonoma  -p ~/Desktop
+          - boxify create iso Ventura -p ~/Desktop
+          - boxify create iso Monterey  -p ~/Desktop
+          - boxify create iso BigSur  -p ~/Desktop
+          - boxify create iso Catalina  -p ~/Desktop
+          - boxify create iso Mojave  -p ~/Desktop
+          - boxify create iso HighSierra  -p ~/Desktop
+          - boxify create iso Sierra  -p ~/Desktop
+          - boxify create iso ElCapitan -p ~/Desktop
+          - boxify create iso Yosemite  -p ~/Desktop
+          - boxify create iso MountainLion  -p ~/Desktop
+          - boxify create iso Lion  -p ~/Desktop
