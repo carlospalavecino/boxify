@@ -1,6 +1,6 @@
 # Boxify
 
-A simple cli application writen in go, made to simplify the creation of vagrant boxes.
+A simple cli application, made to simplify the creation of vagrant boxes.
 
 ### Requirements
 
