@@ -5,6 +5,8 @@ version: 0.0.0
 #   - name: api_key
 #     help: Set your API key
 commands:
+  - name: requirements
+    help: List the requirements for the application
   - name: download
     help: Download an iso image or MacOS Installer
     commands:
@@ -27,8 +29,8 @@ commands:
           - boxify download macos Yosemite
           - boxify download macos MountainLion
           - boxify download macos Lion
-  - name: create
-    help: Create and iso image from a mac installer
+  - name: build
+    help: Build iso images and boxes
     commands:
       - name: iso
         help: Create and iso image from a mac installer
@@ -43,15 +45,29 @@ commands:
             default: "$HOME/Desktop"
             help: save the iso image to this path
         examples:
-          - boxify create iso Sonoma  -p ~/Desktop
-          - boxify create iso Ventura -p ~/Desktop
-          - boxify create iso Monterey  -p ~/Desktop
-          - boxify create iso BigSur  -p ~/Desktop
-          - boxify create iso Catalina  -p ~/Desktop
-          - boxify create iso Mojave  -p ~/Desktop
-          - boxify create iso HighSierra  -p ~/Desktop
-          - boxify create iso Sierra  -p ~/Desktop
-          - boxify create iso ElCapitan -p ~/Desktop
-          - boxify create iso Yosemite  -p ~/Desktop
-          - boxify create iso MountainLion  -p ~/Desktop
-          - boxify create iso Lion  -p ~/Desktop
+          - boxify build iso Sonoma  -p ~/Desktop
+          - boxify build iso Ventura -p ~/Desktop
+          - boxify build iso Monterey  -p ~/Desktop
+          - boxify build iso BigSur  -p ~/Desktop
+          - boxify build iso Catalina  -p ~/Desktop
+          - boxify build iso Mojave  -p ~/Desktop
+          - boxify build iso HighSierra  -p ~/Desktop
+          - boxify build iso Sierra  -p ~/Desktop
+          - boxify build iso ElCapitan -p ~/Desktop
+          - boxify build iso Yosemite  -p ~/Desktop
+          - boxify build iso MountainLion  -p ~/Desktop
+          - boxify build iso Lion  -p ~/Desktop
+      - name: box
+        help: Create a box from a vm (powered off)
+        # args:
+        #   - name: flavour
+        #     required: true
+        #     help: flavour of MacOS to use as source (It must be fully downloaded)
+        # flags:
+        #   - long: --path
+        #     short: -p
+        #     arg: path
+        #     default: "$HOME/Desktop"
+        #     help: save the iso image to this path
+        # examples:
+        #   - boxify build iso Sonoma  -p ~/Desktop
